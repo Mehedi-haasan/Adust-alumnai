@@ -1,8 +1,8 @@
 const express = require('express');
-const morgan = require("morgan");
+
 const cors=require('cors');
 const multer =require("multer")
-const path = require ('path')
+
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 const createError = require("http-errors");
@@ -25,6 +25,7 @@ const rateLimiter = rateLimit ({
     max : 1000,
     message : "Too many request from this Ip. please try again later",
 })
+
 app.use(express.static('upload'));
 // app.use('/profile', express.static('upload/images'));
 
