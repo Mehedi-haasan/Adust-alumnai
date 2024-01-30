@@ -1,77 +1,52 @@
-import React,{useState} from 'react'
+import { Icon } from '@iconify/react'
+
 
 const Contact = () => {
-   const [name, setName]=useState("");
-   const [email, setEmail]=useState("");
-   const [text, setText]=useState("");
-   const [errorMessage, setErrorMessage] = useState('');
 
-  const Email="Email";
 
-  const handleNameChange = (e) =>{
-      setName(e.target.value);
-  }
-  const validateInputEmail = (value) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (value && !emailRegex.test(value)) {
-      setErrorMessage('Invalid input');
-    } else {
-      setErrorMessage('');
-    }
-  };
-  const handleEmailChange = (e) =>{
-       setEmail(e.target.value);
-       validateInputEmail(e.target.value);
-  }
-  const handleTextChange = (e) =>{
-   setText(e.target.value);
-  }
-  const handleSubmit = (e)=>{
-    e.preventDefault();
-   console.log(name,email,text);
-  }
+
   return (
-    <div className=' bg-[#A2E5E9]'>
-      <h1 className='text-center text-4xl mb-4'>Contact us</h1>
-      <p className='text-xl text-center my-4'>We are here to help! Send us your query via the form below or send 
-      <br/>us an email at ({Email}) for any issue you are facing.</p>
- 
-    <div className='grid md:grid-cols-2 md:w-[40%] m-auto mb-4 '>
-      <div style={{
-        backgroundImage:`url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZkP7mRboB0j-GNuhfzwnKMVEW7nvFTuUmsQ&usqp=CAU)`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        width:"100%",
-        margin:"auto",
-        height:"60vh",
-        // marginRight:"5px",
-      
-       }} className='my-4 bg-[#5FC3CA] rounded-l'>
-        {/* <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRujrP_ZCHBvo2aZZzVwe_wtwNAO1GaTON9AA&usqp=CAU' alt='image' className='w-[100%] h-[100%]'/> */}
-      </div>
-     
-      <div className='bg-[#FFFFFF] rounded-r' >
-      <div className='mx-auto'>
-         <form action='submit' className='m-auto'>
-         <input type='name' placeholder='Name' className='border-2 rounded mt-4 mb-2 w-[250px] ml-4' onChange={handleNameChange}/>
-         <br/>
-        <input type='email' placeholder='Email Address' name='email' className='border-2 rounded my-2 ml-4 w-[250px]' onChange={handleEmailChange}/>
-        {
-          errorMessage && <span className='text-red-400 ml-4'>{errorMessage}</span> 
-        }
-        <br/>
-        <textarea type='textarea' placeholder='Type your message here' className='border-2 rounded ml-4 h-[150px] w-[350px] my-2' onChange={handleTextChange}/>
-        <br/>
-        <button type='submit' className='btn rounded block m-auto' onClick={handleSubmit}>Submit</button>
-         </form>
-   
-      </div>
-      </div>
-    </div>
-    <div className='h-5'>
+    <div>
 
-    </div>
+
+      <div>
+        <iframe className='h-[250px] md:h-[350px] lg:h-[500px] w-full' frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Uttara%20Dhaka%201230+(Adust%20Alumni)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+          <a href="https://www.maps.ie/population/">Population mapping</a>
+        </iframe>
+      </div>
+
+
+
+      <h1 className='text-center font-bold text-2xl md:text-3xl lg:text-4xl xl:text-5xl py-5'>Reach out to us</h1>
+      <div className='grid grid-cols-12 gap-4 w-[60%] mx-auto my-10 text-lg font-semibold'>
+
+        {/* Location */}
+        <div className='grid col-span-12 md:col-span-4 bg-[#F4F5F6] rounded-md shadow-lg hover:bg-white border'>
+          <div className='p-6 rounded'>
+            <Icon width="50px" icon="f7:location-fill" className='mx-auto' />
+            <h1 className='text-center'>Uttara Sector #15 khantec Dhaka 1230</h1>
+          </div>
+        </div>
+
+        {/* Mail */}
+        <div className='grid col-span-12 md:col-span-4 bg-[#F4F5F6] rounded-md shadow-lg hover:bg-white border'>
+          <div className='p-6 rounded'>
+            <Icon width="50px" icon="ic:round-mail" className='mx-auto' />
+            <h1 className='text-center'>adustalumnai@gmail.com</h1>
+            <h1 className='flex items-center justify-center'>Send Mail <Icon className='mt-1 ml-1' icon="fa6-solid:arrow-right-long" /></h1>
+          </div>
+        </div>
+
+        {/* Call */}
+        <div className='grid col-span-12 md:col-span-4 bg-[#F4F5F6] rounded-md shadow-lg hover:bg-white border'>
+          <div className='p-6 rounded'>
+            <Icon width="50px" icon="subway:call" className='mx-auto' />
+            <h1 className='text-center'>123456789</h1>
+            <h1 className='text-center'>123456789</h1>
+            <h1 className='flex items-center justify-center'>Contact Now <Icon className='mt-1 ml-1' icon="fa6-solid:arrow-right-long" /></h1>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

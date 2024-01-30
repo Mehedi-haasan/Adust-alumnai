@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="">
     <div className="px-2 pt-16 bg-[#F4F2F0]">
-      <div className="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6 md:w-[90%] m-auto ">
+      <div className="grid gap-16 row-gap-10 mb-8 lg:grid-cols-6 md:w-[95%] m-auto ">
         <div className="md:max-w-md lg:col-span-2">
           <a
             href="/home"

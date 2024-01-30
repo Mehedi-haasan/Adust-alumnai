@@ -6,10 +6,13 @@ const port = 8050;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors())
 
-const db = require("./src/models");
-require('./src/routers/user.routes')(app);
-require('./src/routers/product.template.routes')(app);
+const db = require("./models");
+require('./routes/user.routes')(app);
+require('./routes/blogs.routes')(app);
+require('./routes/comment.routes')(app);
+// require('./routes/comment.routes')(app);
 
 const Role = db.role;
 
