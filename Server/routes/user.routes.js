@@ -14,6 +14,11 @@ module.exports = function (app) {
     app.post("/api/auth/signin", controller.singIn);
 
     app.post("/api/auth/signup", controller.singUp);
+
+    app.post("/api/auth/forget/password", controller.forgetPassword);
+
+    app.get("/reset/password/:id/:resetToken", controller.resetPassword);
+    app.post("/reset/password/:id/:resetToken", controller.FinulResetPassword);
     
     app.get("/api/get/users", [jwt.verifyToken], controller.getUsers);
 

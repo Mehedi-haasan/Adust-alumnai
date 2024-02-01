@@ -1,8 +1,8 @@
 const config = {
     HOST: "localhost",
     USER: "root",
-    PASSWORD: "Ceevit250",
-    DB: "doodle",
+    PASSWORD: "ceevit250",
+    DB: "adust",
     dialect: "mysql",
     pool: {
         max: 5,
