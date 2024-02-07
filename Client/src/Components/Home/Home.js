@@ -2,7 +2,7 @@ import Vote from '../Vote/Vote'
 import React, { useState,useEffect } from "react";
 import io from "socket.io-client";
 
-const socket = io('http://localhost:8050');
+// const socket = io('http://localhost:8050');
 
 const Home = () => {
 
@@ -21,15 +21,15 @@ const Home = () => {
     //   };
     }, []);
   
-    const sendMessage = () => {
-      // Emit a message to the server
-      socket.emit('chat message', newMessage);
-    //   setNewMessage('');
-    };
+    // const sendMessage = () => {
+    //   // Emit a message to the server
+    //   socket.emit('chat message', newMessage);
+    // //   setNewMessage('');
+    // };
     
     return (
         <div>
-            <button onClick={sendMessage}>Send</button>
+            {/* <button onClick={sendMessage}>Send</button> */}
             <Vote />
         </div>
     );

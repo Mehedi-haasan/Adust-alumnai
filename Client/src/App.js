@@ -28,7 +28,6 @@ function App() {
         <Route path='/favorite/blog' element={<FavoriteBlog />} />
         <Route path='/login' element={<Login />} />
         <Route path='/registration' element={<Registration />} />
-        {/* <Route path='/forgotpassword' element={<ForgotPassword />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>
